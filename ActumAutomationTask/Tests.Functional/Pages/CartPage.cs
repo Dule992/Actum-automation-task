@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using OpenQA.Selenium;
 
-namespace Functional.Tests.Pages
+namespace Tests.Functional.Pages
 {
-    public class CartPage
+    public class CartPage : BasePage
     {
+        private readonly IWebDriver _webDriver;
+        public CartPage(IWebDriver webDriver) : base(webDriver)
+        {
+            _webDriver = webDriver; 
+        }
+
+        #region Locators
+
+
+        #endregion
+
+        #region WebElements
+
+
+        #endregion
     }
 }

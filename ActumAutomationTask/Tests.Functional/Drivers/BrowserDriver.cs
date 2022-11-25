@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace Functional.Tests.Drivers
+namespace Tests.Functional.Drivers
 {
     public class BrowserDriver : IDisposable
     {
@@ -20,6 +20,7 @@ namespace Functional.Tests.Drivers
             var service = ChromeDriverService.CreateDefaultService();
 
             var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArguments("headless");
 
             var chromeDriver = new ChromeDriver(service, chromeOptions);
 

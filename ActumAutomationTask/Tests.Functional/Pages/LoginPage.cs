@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Functional.Tests.Pages
+namespace Tests.Functional.Pages
 {
     public class LoginPage : BasePage
     {
@@ -29,7 +29,8 @@ namespace Functional.Tests.Pages
 
         #endregion
 
-        public void FillSignUpForm(string username, string password)
+        #region Methods
+        public void FillLoginForm(string username, string password)
         {
             TypeText(UsernameField, usernameField, username);
             TypeText(PasswordField, passwordField, password);
@@ -40,5 +41,7 @@ namespace Functional.Tests.Pages
         {
             return GetText(NameOfUserLabel, nameOfUserLabel);
         }
+
+        #endregion
     }
 }

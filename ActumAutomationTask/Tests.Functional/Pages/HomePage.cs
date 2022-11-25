@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace Functional.Tests.Pages
+namespace Tests.Functional.Pages
 {
     public class HomePage : BasePage
     {
@@ -33,6 +33,7 @@ namespace Functional.Tests.Pages
 
         #endregion
 
+        #region Methods
         public void ClickOnSingUpButon()
         {
             ClickOn(HomeSignUpButton, homeSingUpButton);
@@ -43,7 +44,7 @@ namespace Functional.Tests.Pages
             ClickOn(LoginButton, loginButton);
         }
 
-        public void FillSignUpForm(string username, string password)       
+        public void FillSignUpForm(string username, string password)
         {
             TypeText(UsernameField, usernameField, username);
             TypeText(PasswordField, passwordField, password);
@@ -68,9 +69,12 @@ namespace Functional.Tests.Pages
             }
             catch (NoAlertPresentException e)
             {
+                Console.WriteLine(e.Message);
                 return false;
             }
             return true;
         }
+
+        #endregion
     }
 }

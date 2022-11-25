@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Functional.Tests.Pages
+namespace Tests.Functional.Pages
 {
     public class CategoriesPage
     {

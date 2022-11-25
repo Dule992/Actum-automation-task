@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace Functional.Tests
+namespace Tests.Functional
 {
     public class TestBase
     {
