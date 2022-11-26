@@ -25,6 +25,7 @@ namespace Tests.Functional.Pages
 
         #endregion
 
+        #region Methods
         public void ClickOnCartButon()
         {
             ClickOn(CartMenuButton, cartMenuButton);
@@ -32,6 +33,8 @@ namespace Tests.Functional.Pages
         public void ClickOnAddToCartButon()
         {
             ClickOn(AddToCartButton, addToCartButton);
-        }       
+        }
+        
+        #endregion
     }
 }

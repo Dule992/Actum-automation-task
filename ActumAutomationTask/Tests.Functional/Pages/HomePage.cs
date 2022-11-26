@@ -19,10 +19,11 @@ namespace Tests.Functional.Pages
         private By loginButton => By.Id("login2");
         private By usernameField => By.Id("sign-username");
         private By passwordField => By.Id("sign-password");
-        private By formSignUpButton => By.XPath("//button[@onclick='register()']");        
+        private By formSignUpButton => By.XPath("//button[@onclick='register()']");
         private By itemPicture(string itemInList) => By.XPath($"//div[@class='col-lg-4 col-md-6 mb-4'][{itemInList}]");
+        private By categoriesFilter(string filterType) => By.XPath($"//a[contains(text(),'{filterType}')]");
         private By listOfItems => By.XPath("//div[@class='card-block']//h4[@class='card-title']");
-        
+
         #endregion
 
         #region WebElements
@@ -34,6 +35,7 @@ namespace Tests.Functional.Pages
         private IWebElement FormSignUpButton => _webDriver.FindElement(formSignUpButton);
         private IWebElement ItemPicture(string itemInList) => _webDriver.FindElement(itemPicture(itemInList));
         private IList<IWebElement> ListOfItems => _webDriver.FindElements(listOfItems);
+        private IWebElement CategoriesFilter(string filterType) => _webDriver.FindElement(categoriesFilter(filterType));
 
         #endregion
 
@@ -53,6 +55,11 @@ namespace Tests.Functional.Pages
             TypeText(UsernameField, usernameField, username);
             TypeText(PasswordField, passwordField, password);
             ClickOn(FormSignUpButton, formSignUpButton);
+        }
+
+        public void ClickOnCategoriesFilter(string filterType)
+        {
+            ClickOn(CategoriesFilter(filterType), categoriesFilter(filterType));
         }
 
         public string GetAlertMessage()

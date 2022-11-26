@@ -1,15 +1,18 @@
 ﻿Feature: Sign Up
 
+@regression @headlessMode
 Scenario: 01 Create account with new user
 	Given User opened the home page
 	When User filled the sign up form with new username and password
 	Then Validation message Sign up successful. is presented
 
+@smoke @headlessMode
 Scenario: 02 Create account with existing user
 	Given User opened the home page
 	When User filled the sign up form with existing username and password
 	Then Validation message This user already exist. is presented
 
+@smoke @headlessMode
 Scenario: 03 Create account with missing credentials
 	Given User opened the home page
 	When User filled the sign up form with missing <username> and <password>
