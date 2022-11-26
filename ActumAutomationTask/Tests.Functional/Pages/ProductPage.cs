@@ -32,9 +32,6 @@ namespace Tests.Functional.Pages
         public void ClickOnAddToCartButon()
         {
             ClickOn(AddToCartButton, addToCartButton);
-        }
-
-
-       
+        }       
     }
 }
