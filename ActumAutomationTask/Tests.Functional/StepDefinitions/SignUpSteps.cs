@@ -23,7 +23,7 @@ namespace Tests.Functional.StepDefinitions
             _homePage.WaitElement();
             _homePage.ClickOnSingUpButon();
             _homePage.WaitElement();
-            _homePage.FillSignUpForm(userData.userName, userData.password);
+            _homePage.FillSignUpForm(userData.UserName, userData.Password);
         }
 
         [When(@"User filled the sign up form with existing username and password")]

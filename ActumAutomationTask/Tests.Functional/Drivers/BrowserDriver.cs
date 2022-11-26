@@ -20,7 +20,7 @@ namespace Tests.Functional.Drivers
             var service = ChromeDriverService.CreateDefaultService();
 
             var chromeOptions = new ChromeOptions();
-            chromeOptions.AddArguments("headless");
+            //chromeOptions.AddArguments("headless");
 
             var chromeDriver = new ChromeDriver(service, chromeOptions);
 

@@ -1,9 +1,4 @@
 ﻿using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 using Tests.Functional.Drivers;
 using Tests.Functional.Pages;
@@ -25,6 +20,8 @@ namespace Tests.Functional.StepDefinitions
             _homePage.GoToPage(HomePageUrl);
         }
 
+        [Given(@"Validation message (.*) is presented")]
+        [When(@"Validation message (.*) is presented")]
         [Then(@"Validation message (.*) is presented")]
         public void ValidationMessageThatIsPresented(string expectedMessage)
         {

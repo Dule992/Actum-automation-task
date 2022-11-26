@@ -26,15 +26,15 @@ namespace Tests.Functional.StepDefinitions
         {
             _testData = new Data()
             {
-                userName = TestDataConstants.Username,
-                password = TestDataConstants.Password
+                UserName = TestDataConstants.Username,
+                Password = TestDataConstants.Password
             };
 
             _homePage.WaitElement();
             _homePage.ClickOnLoginButon();
             _homePage.WaitElement();
 
-            _loginPage.FillLoginForm(_testData.userName, _testData.password);
+            _loginPage.FillLoginForm(_testData.UserName, _testData.Password);
         }
 
         [When(@"User filled the login form with not existing username and password")]
@@ -46,7 +46,7 @@ namespace Tests.Functional.StepDefinitions
             _homePage.ClickOnLoginButon();
             _homePage.WaitElement();
 
-            _loginPage.FillLoginForm(_testData.userName, _testData.password);
+            _loginPage.FillLoginForm(_testData.UserName, _testData.Password);
         }
 
 
@@ -56,7 +56,7 @@ namespace Tests.Functional.StepDefinitions
             Thread.Sleep(5000);
             string actualUserName = _loginPage.VerifyNameOfUser();
 
-            actualUserName.Should().BeEquivalentTo("Welcome " + _testData.userName);
+            actualUserName.Should().BeEquivalentTo("Welcome " + _testData.UserName);
         }
     }
 }
