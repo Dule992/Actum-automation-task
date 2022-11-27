@@ -37,8 +37,7 @@ namespace Tests.Functional.StepDefinitions
         [Then(@"User opened the cart page")]
         public void UserOpenedTheCartPage()
         {
-            _productPage.WaitElement();
-            _productPage.ClickOnCartButon();
+            _productPage.GoToPage(CartPageUrl);
         }
 
         [Given(@"User see the item in cart")]
