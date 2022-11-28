@@ -1,12 +1,13 @@
 ﻿using Bogus;
-using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RestSharp;
 using Tests.API.Models;
 
 namespace Tests.API.Helpers
 {
     public class DataHelper
     {
-        public static string CreateBookingData()
+        public static BookingModel CreateBookingData()
         {
             Faker faker = new Faker();
             
@@ -20,9 +21,7 @@ namespace Tests.API.Helpers
                 additionalneeds = "Breakfast"
             };
 
-            var body = JsonConvert.SerializeObject(bookingData);
-
-            return body;
+            return bookingData;
         }
 
         public static BookingDatesModel PrepareBookingDates(Faker faker)
@@ -34,6 +33,29 @@ namespace Tests.API.Helpers
             };
 
             return bookingDates;
+        }
+        public static string GetTokenValueFromResponse(RestResponse response)
+        {
+            var message = response.Content.ToString();
+            var data = JObject.Parse(message);
+            var token = data.Value<string>("token");
+            return token;
+        }
+
+        public static int GetBookingIdFromGetBookingIdsResponse(RestResponse response)
+        {
+            var message = response.Content.ToString();
+            var data = JArray.Parse(message);
+            var bookingId = data.First.Value<int>("bookingid");
+            return bookingId;
+        }
+
+        public static int GetBookingIdFromCreateBookingResponse(RestResponse response)
+        {
+            var message = response.Content.ToString();
+            var data = JObject.Parse(message);
+            var bookingId = data.Value<int>("bookingid");
+            return bookingId;
         }
     }
 }

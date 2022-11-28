@@ -6,10 +6,10 @@ using Tests.Functional.Pages;
 namespace Tests.Functional.StepDefinitions
 {
     [Binding]
-    public class CommonSteps : TestBase
+    public class SharedSteps : TestBase
     {
         private readonly HomePage _homePage;
-        public CommonSteps(BrowserDriver driver)
+        public SharedSteps(BrowserDriver driver)
         {
             _homePage = new HomePage(driver.Current);
         }
